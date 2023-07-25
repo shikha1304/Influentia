@@ -1,0 +1,20 @@
+.support-component{
+    color: #48355f;
+    height: 30rem;
+}
+.support-component div{
+    width: 10rem;
+    height: 3.5rem;
+    cursor: pointer;
+    background-color: #d2c7e0;
+}
+.support-component div:hover{
+    transform: scale(1.02);
+    background-color: #48355f;
+    color: #fff !important;
+    border: 1px solid #78589e;
+}
+
+.beige-bck{
+    background-color: aliceblue;
+}

@@ -1,0 +1,10 @@
+<div class="container-fluid mt-2 mx-1 " style="background-color: aliceblue">
+    <div class="row heading mx-1 d-flex justify-content-center align-items-center rounded-2" style="background-color: #bbdaf6; color: blueviolet">
+        <div class="col-3">Ticket Id</div>
+        <div class="col-3">Created On</div>
+        <div class="col-6">Ticket Status</div>
+    </div>
+    <div class="mx-1 my-2" *ngFor="let i of list">
+        <app-ticket-item [item]="i"></app-ticket-item>
+    </div>
+</div>
