@@ -1,0 +1,50 @@
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="m-5 p-3 rounded w-50 border border-2 border-rounded">
+
+        <div class="title text-uppercase text-center mt-3 mb-5 ">
+            <h2>Subscription Details</h2>
+        </div>
+
+        <div class="content mb-3 mx-3 px-5">
+            <div class="table mx-5 px-3">
+                <div class="row my-2">
+                    <div class="col-5">Subscription Id </div>
+                    <div class="col-5">{{ subscriptionPlan.subscriptionId }}</div>
+                </div>
+                <div class="row my-2">
+                    <div class="col-5">Username  </div>
+                    <div class="col-5">{{ subscriptionPlan.username }}</div>
+                </div>
+                <div class="row my-2">
+                    <div class="col-5">Plan Name </div>
+                    <div class="col-5">{{ subscriptionPlan.planid.name }}</div>
+                </div>
+                <div class="row my-2">
+                    <div class="col-5">Start Date </div>
+                    <div class="col-5">{{ subscriptionPlan.subscriptionStartDate | date }}</div>
+                </div>
+                <div class="row my-2">
+                    <div class="col-5">End Date </div>
+                    <div class="col-5">{{ subscriptionPlan.subscriptionEndDate | date }}</div>
+                </div>
+                <div class="row my-2">
+                    <div class="col-5">Amount Paid </div>
+                    <div class="col-5">{{ subscriptionPlan.amountPaid }}</div>
+                </div>
+                <div class="row my-2">
+                    <div class="col-5">Payment Mode </div>
+                    <div class="col-5">{{ subscriptionPlan.paymentMode }}</div>
+                </div>
+                <div class="row my-2">
+                    <div class="col-5">Status </div>
+                    <div class="col-5">{{ subscriptionPlan.subscriptionstatus }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center mt-5 mb-3">
+            <button class="btn btn-sm mx-3" (click)="onRenew()">Renew Subscription</button>
+            <button class="btn btn-sm mx-3" (click)="onCancel()">Cancel Subscription</button>
+        </div>
+    </div>
+</div>

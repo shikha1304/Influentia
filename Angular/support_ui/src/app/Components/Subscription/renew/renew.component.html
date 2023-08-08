@@ -1,0 +1,22 @@
+<form class="renew-form" [formGroup]="formData" (ngSubmit)="onSubmit()">
+    <h1 mat-dialog-title>Renew Subscription</h1>
+    <div class="d-flex justify-content-center align-items-center">
+    <div mat-dialog-content>
+        <mat-form-field>
+            <mat-label>Duration</mat-label>
+            <input formControlName="duration" matInput/>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Payment Mode</mat-label>
+            <textarea formControlName="paymentMode" matInput></textarea>
+        </mat-form-field>
+    </div>
+    </div>
+    <div mat-dialog-actions class="d-flex justify-content-center">
+        <button mat-raised-button color="primary" class="m-3">Pay</button>
+        <button mat-raised-button color="primary" class="m-3">Cancel</button>
+    </div>
+</form>
+
+

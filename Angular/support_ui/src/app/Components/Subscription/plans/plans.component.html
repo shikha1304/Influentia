@@ -1,0 +1,24 @@
+<div class="dialog-container card">
+
+    <div mat-dialog-title class="d-flex justify-content-center align-items-center mx-3 mt-3 p-3">
+        <h2>Subscription Plan Details</h2>
+    </div>
+
+    <div mat-dialog-content class="d-flex justify-content-center align-items-center mx-3 mb-5 mt-1 p-3">
+        <div class="container">
+            <div class="row mx-3 mb-3" style="font-weight: bold;">
+                <div class="col-3 mx-2">Plan Id</div>
+                <div class="col-3 mx-2">Plan Name</div>
+                <div class="col-4 mx-2">Price Per Month</div>
+            </div>
+        
+            <div class="row mx-3 mb-2" *ngFor="let i of items">
+                <hr class="mt-2">
+                <div class="col-3 mx-2">{{ i.planId }}</div>
+                <div class="col-3 mx-2">{{ i.name }}</div>
+                <div class="col-4 mx-2">{{ i.pricepermonth }} Rs.</div>      
+            </div>
+        </div>
+    </div>
+    
+</div>

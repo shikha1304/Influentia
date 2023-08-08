@@ -1,0 +1,61 @@
+<form>
+    <div class="d-flex justify-content-center align-items-center mb-5">
+        <div class="m-5 p-3 rounded w-50 border border-2 border-rounded">
+            <div class="mt-3 mb-3 title text-uppercase text-center">
+                <h2>Purchase a Subscription</h2>
+            </div>
+
+            <div class="d-flex justify-content-end">
+                <a role="button" class="py-2 pl-2 pr-3 border border-2 rounded mx-3" (click)="viewPlans()"><fa-icon [icon]="eye"></fa-icon>   Plans</a>
+                <a role="button" class="py-2 pr-3 pl-2 border border-2 rounded mx-3" (click)="viewDiscounts()"><fa-icon [icon]="eye"></fa-icon>   Discounts</a>
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="label form-label">Select your Plan</label>
+                <select class="form-control">
+                    <option value="1">Basic</option>
+                    <option value="2">Pro</option>
+                </select>   
+            </div>
+            <div class="form-group mb-3">
+                <label class="label">Plan Duration</label>
+                <br>
+                <div class="form-check form-check-inline">
+                    <input class="form-control form-check-input" type="radio" id="1m">
+                    <label class="form-label" for="1m" value="1">One Month</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                <input class="form-control form-check-input" type="radio" id="3m">
+                <label class="form-label" for="3m" value="3">Three Months</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                <input class="form-control form-check-input" type="radio" id="6m">
+                <label class="form-label" for="6m" value="6">Six Months</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                <input class="form-control form-check-input" type="radio" id="12m">
+                <label class="form-label" for="12m" value="12">One Year</label>
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <label class="label form-label">Payment Mode</label>
+                <select class="form-control">
+                    <option>Card</option>
+                    <option>Net Banking</option>
+                </select>
+            </div>
+
+            <div class="addons ml-3 mb-3 mt-2" style="font-style: initial;">
+                <small>*Refer to Plans before selecting your Subscription Plan</small><br>
+                <small>*Refer to Discounts before selecting your Plan Duration</small>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button class="btn mx-3">Pay</button>
+                <button class="btn mx-3">Cancel</button>
+            </div>
+        </div>
+    </div>
+</form>

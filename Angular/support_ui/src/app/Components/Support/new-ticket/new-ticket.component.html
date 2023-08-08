@@ -1,0 +1,28 @@
+<form class="form" (ngSubmit)="onSubmit()" [formGroup]="formData">
+    <div class="d-flex justify-content-center"><h1 class="title" mat-dialog-title>Raise a Ticket</h1></div>
+    
+    <div mat-dialog-content>
+        <mat-form-field class="full-width">
+            <mat-label>Ticket Summary</mat-label>
+            <input formControlName="ticketSummary" matInput/>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="full-width">
+            <mat-label>Ticket Details</mat-label>
+            <textarea formControlName="ticketDetails" matInput></textarea>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="full-width">
+            <mat-label>Ticket Type</mat-label>
+                <mat-select formControlName="ticketType">
+                    <mat-option value="subscription"> Subscription </mat-option>
+                    <mat-option value="billing"> Billing</mat-option>
+                    <mat-option value="post management">Post Management</mat-option>
+                    <mat-option value="others">Others</mat-option>
+                </mat-select>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button color="primary">Submit</button>
+    </div>
+</form>

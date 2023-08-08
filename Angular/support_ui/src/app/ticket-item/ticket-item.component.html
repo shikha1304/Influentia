@@ -1,8 +1,0 @@
-<div class="row border border-2 d-flex justify-content-center align-items-center rounded-top-2" style="background-color: rgb(221, 234, 247)">
-    <div class="col-2">{{ item.ticketId }}</div>
-    <div class="col-3">{{ item.createdOn | date}}</div>
-    <!-- <div class="col-3">{{ item.expectedResolutionOn | date}}</div> -->
-    <div class="col-3">{{ item.ticketStatus }}</div>
-    <!-- <div class="col-2">{{ item.ticketType }}</div> -->
-    <div class="col-2 btn btn-sm btn-dimension btn-class my-1" (click)="onTrack()" (item.ticketId)="item">View Details</div>
-</div>  

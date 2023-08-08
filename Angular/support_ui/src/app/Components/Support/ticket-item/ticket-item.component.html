@@ -1,0 +1,7 @@
+<div class="row border border-2 d-flex justify-content-center align-items-center rounded-top-2" style="background-color: rgb(221, 234, 247)">
+    <div class="col-2">{{ item.ticketId }}</div>
+    <div class="col-2">{{ item.createdOn | date}}</div>
+    <div class="col-2">{{ item.ticketStatus }}</div>
+    <div class="col-2 my-2 " mat-button (click)="onTrack()"><fa-icon [icon]="faEye"></fa-icon></div>
+    <div class="col-2 my-2 " mat-button (click)="onResolution(item.ticketId)"><fa-icon [icon]="faEdit"></fa-icon></div>
+</div>  

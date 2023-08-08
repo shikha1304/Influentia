@@ -39,7 +39,7 @@ public class CloseTicketTest {
         when(supportTicketsRepo.findById(ticketId)).thenReturn(java.util.Optional.of(supportTicket));
 
         // Act
-        closeTicket.updateTicketByRes(ticketId);
+        closeTicket.closeTicketById(ticketId);
 
         // Assert
         assertEquals("Close", supportTicket.getTicketStatus());
@@ -54,7 +54,7 @@ public class CloseTicketTest {
         when(supportTicketsRepo.findById(ticketId)).thenReturn(java.util.Optional.empty());
 
         // Act & Assert
-        assertThrows(ResourceNotFoundException.class, () -> closeTicket.updateTicketByRes(ticketId));
+        assertThrows(ResourceNotFoundException.class, () -> closeTicket.closeTicketById(ticketId));
         verify(supportTicketsRepo, times(1)).findById(ticketId);
         verify(supportTicketsRepo, never()).save(any(SupportTickets.class));
     }

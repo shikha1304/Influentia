@@ -1,0 +1,17 @@
+<form class="res-form" [formGroup]="formData" (ngSubmit)="onSubmit()">
+    <h1 mat-dialog-title>Resolution Details</h1>
+    <div mat-dialog-content>
+        <mat-form-field>
+            <mat-label>Resolved By</mat-label>
+            <input formControlName="resolvedByUserName" matInput/>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Resolution Details</mat-label>
+            <textarea formControlName="resolutionDetails" matInput></textarea>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button color="primary">Submit</button>
+    </div>
+</form>
+

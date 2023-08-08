@@ -1,0 +1,22 @@
+.btn{
+   background-color: #CDB0EE;
+}
+
+.btn:hover{
+    color: #ffffff;
+    background-color: #48355f;
+}
+
+.label{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+a:hover{
+    background-color: #eae1f7;
+}
+
+h2{
+    color: darkblue;
+    font-weight: bolder;
+}

@@ -15,8 +15,10 @@ import com.Project.InfluentiaSupport.service.GetTicketsById;
 import com.Project.InfluentiaSupport.service.GetTicketsByUserName;
 import com.Project.InfluentiaSupport.service.UserService;
 import com.Project.InfluentiaSupport.DTO.SupportTicketsDTO;
+import com.Project.InfluentiaSupport.DTO.TicketResolutionDTO;
 import com.Project.InfluentiaSupport.DTO.UserLoginDTO;
 import com.Project.InfluentiaSupport.Entity.SupportTickets;
+import com.Project.InfluentiaSupport.Entity.TicketSolutions;
 import com.Project.InfluentiaSupport.Entity.UserDetails;
 import com.Project.InfluentiaSupport.Exception.InvalidCredentialException;
 import com.Project.InfluentiaSupport.Exception.ResourceNotFoundException;
@@ -24,6 +26,7 @@ import com.Project.InfluentiaSupport.Exception.ResourceNotFoundException;
 import com.Project.InfluentiaSupport.service.CloseTicket;
 import com.Project.InfluentiaSupport.service.CreateNewTickets;
 import com.Project.InfluentiaSupport.service.GetAllOpenTickets;
+import com.Project.InfluentiaSupport.service.GetResolutionById;
 
 @RestController
 @RequestMapping("/api/tickets")
@@ -63,16 +66,16 @@ public class MainController {
 	@Autowired
 	private CreateNewTickets addNewTicket;
 	
-	/*
+	
 	@GetMapping("/planname/{username}")
 	public @ResponseBody String getResponse(@PathVariable String username) {
 		return addNewTicket.getPlanName(username);
 	}
-	*/
+	
 	
 	
 	//Add a new Ticket
-	@CrossOrigin
+	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("/new")
 	public String addNew(@RequestBody SupportTicketsDTO supportTicketsDTO) throws ResourceNotFoundException, InvalidCredentialException{
 			return addNewTicket.addNewTicket(supportTicketsDTO);
@@ -89,17 +92,27 @@ public class MainController {
 	}
 	
 	@Autowired
-	private CloseTicket updateTicket;
+	private CloseTicket closeTicket;
 	
 	//Update ticket with Resolution
-	@CrossOrigin
-	@PutMapping("{ticketid}/resolve")
-	public String updateTicketByResolution(@PathVariable int ticketid) throws ResourceNotFoundException{
-		updateTicket.updateTicketByRes(ticketid);
-		return "Ticket with Ticket Id " + ticketid + " is closed successfully";
+	@CrossOrigin(origins = "http://localhost:4200")
+	@PutMapping("resolve")
+	public String updateTicketByResolution(@RequestBody TicketResolutionDTO ticketResolutionDTO) throws ResourceNotFoundException{
+		int ticketid = ticketResolutionDTO.getSupportTicketId();
+		closeTicket.updateTicketResolution(ticketResolutionDTO);
+		closeTicket.closeTicketById(ticketid);
+		return "Ticket with Ticket Id " + ticketid + " is Resolved Successfully";
 	}
 	
-
+	@Autowired
+	private GetResolutionById getResolutionById;
+	
+	@CrossOrigin
+	@GetMapping("res/{id}")
+	public TicketSolutions getTicketSolutionsById(@PathVariable(value="id") int supportTicketId) {
+		return getResolutionById.getTicketSolution(supportTicketId);
+	}
+	
 	@Autowired
 	private UserService userService;
 	

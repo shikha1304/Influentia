@@ -1,0 +1,8 @@
+<div class="dialog-container card px-3 py-3 d-flex justify-content-center align-items-center" >
+    <h1 mat-dialog-title class="dialog-title">Resolution Details</h1>
+    <p>Resolution Id: {{ ticketRes.id }}</p>
+    <p>Resolved On: {{ ticketRes.resolvedOn | date}}</p>
+    <p>Resolved By: {{ ticketRes.resolvedByUserName }}</p>
+    <p>Resolution Details: {{ ticketRes.resolutionDetails }} </p>
+    <p>Ticket Id: {{ ticketRes.supportTicketId }}</p>
+</div>

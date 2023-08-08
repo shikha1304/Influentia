@@ -1,0 +1,35 @@
+<form #register="ngForm" (ngSubmit)="onSubmit()">
+
+  <div class="d-flex justify-content-center align-items-center">
+
+    <div class="m-5 p-3 rounded w-50 border border-2 border-rounded">
+
+      <h2 class="text-uppercase text-center mb-5">Create an account</h2>     
+
+      <div class="form-group mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" class="form-control" name="userName" ngModel required>
+      </div>
+
+      <div class="form-group mb-3">
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-control" name="email" ngModel required email #email="ngModel">
+        <span *ngIf="!email.valid && email.touched">Please enter a valid email!!</span>
+      </div>
+
+      <div class="form-group mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" ngModel required password>
+      </div>
+                  
+      <div class="d-flex justify-content-center">
+        <button type="submit"
+          class="btn btn-outline-success btn-block btn-lg gradient-custom-4 text-body mt-3"
+          [disabled]="!register.valid" >Register</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

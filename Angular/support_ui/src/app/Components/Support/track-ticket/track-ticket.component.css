@@ -1,0 +1,13 @@
+.dialog-title{
+    color: navy;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+p{
+    color: navy;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: 200;
+}
+
