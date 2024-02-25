@@ -3,7 +3,7 @@
 
 A web application designed for social media influencers to manage their social media accounts and schedule and plan their posts.
 
-The application is implemented with **Java** and **Spring Boot** on the backend side and **Angular** on the frontend side. **MySql** has been used as the database. **Mockito** has been used for unit testing.
+The application is implemented with **Java** and **Spring Boot** on the backend side and **Angular** and **Typescript** on the frontend side. **MySql** has been used as the database. **Mockito** has been used for unit testing.
 
 
 ## Screenshots
